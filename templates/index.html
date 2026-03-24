@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block title %}画像キャプション生成AI{% endblock %}
+
+{% block content %}
+<div class="upload-section">
+    <h1>画像キャプション生成AI</h1>
+    <p>画像をアップロードしてAIに説明文を生成してもらいましょう。</p>
+    
+    <form method="POST" enctype="multipart/form-data">
+        <input type="file" name="file" accept="image/*" required>
+        <br><br>
+        <input type="submit" value="画像をアップロードして生成">
+    </form>
+</div>
+
+{% if image_url or caption %}
+<hr>
+<div class="result-section">
+    <h2>分析結果</h2>
+    {% if image_url %}
+        <div class="image-container">
+            <img src="{{ image_url }}" alt="アップロードされた画像" class="result-image" style="max-width: 100%; height: auto; border: 1px solid #ccc; padding: 5px;">
+        </div>
+    {% endif %}
+    {% if caption %}
+        <p class="caption-text" style="margin-top: 20px; font-size: 1.2em;">
+            AIによる説明: <strong>{{ caption }}</strong>
+        </p>
+    {% endif %}
+</div>
+{% endif %}
+{% endblock %}

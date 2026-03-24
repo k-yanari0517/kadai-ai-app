@@ -1,0 +1,31 @@
+services:
+  db:
+    image: postgres:15
+    container_name: postgres_db
+    restart: always
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: caption_db
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+
+  web:
+    build: .
+    container_name: kouka-web-1
+    volumes:
+      - .:/app
+      - ./static/uploads:/app/static/uploads
+    ports:
+      - "8000:8000"
+    environment:
+      # SQLiteからPostgreSQLへの接続情報に切り替え
+      - DATABASE_URL=postgresql://user:password@db:5432/caption_db
+      - SECRET_KEY=your_secret_key
+    depends_on:
+      - db
+
+volumes:
+  postgres_data:

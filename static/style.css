@@ -1,0 +1,189 @@
+/* Base Styles */
+body {
+    font-family: sans-serif;
+    max-width: 800px;
+    margin: 20px auto; /* Centered page content */
+    padding: 0 20px;
+    background-color: #f8f9fa;
+    color: #343a3d;
+}
+
+h1, h2, header {
+    text-align: center; /* Centered headings */
+    color: #007bff;
+    margin-bottom: 30px;
+}
+
+hr {
+    border: 0;
+    height: 1px;
+    background-color: #ddd;
+    margin: 40px 0;
+}
+
+/* Utilities */
+.mx-auto {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Card/Section Styles - Common properties for various content blocks */
+.card, .upload-section, .result-section {
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 30px;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    text-align: center; /* ★ ALL sections will center their inline content ★ */
+}
+
+/* Authentication Forms Specifics */
+.dt-auth-main {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto; /* Ensures the auth form itself is centered */
+}
+
+.dt-auth-login header {
+    font-size: 1.8em;
+    font-weight: bold;
+    margin-bottom: 25px;
+    color: #333;
+}
+
+/* Form Elements */
+.form-control, input[type="file"] {
+    width: calc(100% - 22px);
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1em;
+    margin-bottom: 15px;
+}
+input[type="file"] {
+    background-color: #f0f0f0;
+    cursor: pointer;
+}
+
+/* Buttons */
+.dt-auth-btn, input[type="submit"] {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    width: 100%;
+    transition: background-color 0.3s ease;
+}
+.dt-auth-btn:hover, input[type="submit"]:hover {
+    background-color: #0056b3;
+}
+input[type="submit"] {
+    margin-top: 15px;
+    max-width: 300px; /* Optional: Make submit button narrower and centered */
+    margin-left: auto;
+    margin-right: auto;
+    display: block; /* Required for margin: auto to work */
+}
+
+
+/* Flash Messages */
+.flash-message, .dt-auth-flash {
+    display: block;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    font-weight: bold;
+    text-align: center;
+}
+.flash-message.error, .flash-message.danger {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+.flash-message.success {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+.flash-message.info, .dt-auth-flash {
+    background-color: #d1ecf1;
+    color: #0c5460;
+    border: 1px solid #bee5eb;
+}
+
+/* Links */
+.center-link {
+    text-align: center;
+    margin-top: 20px;
+}
+.center-link a {
+    color: #007bff;
+    text-decoration: none;
+}
+.center-link a:hover {
+    text-decoration: underline;
+}
+
+/* Navbar (top navigation) */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 20px;
+    background-color: #ffffff;
+    border-bottom: 1px solid #ccc;
+}
+.navbar a {
+    margin-left: 15px;
+    text-decoration: none;
+    color: #007bff;
+}
+.user-info {
+    margin-right: 10px;
+    font-weight: bold;
+}
+
+/* Image Specific Styles */
+/* Global img rule for gallery or small uniform images */
+img {
+    width: 200px;
+    height: 150px;
+    object-fit: cover;
+}
+
+/* Specific style for the displayed result image on index page */
+.result-image {
+    max-width: 100%; /* Allows it to be responsive within its container */
+    height: auto; /* Maintains aspect ratio when scaling */
+    border: 1px solid #eee;
+    margin-bottom: 25px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.05);
+
+    /* ★ Crucial for robust centering of this image ★ */
+    display: block; /* Treat image as a block element */
+    margin-left: auto; /* Center horizontally */
+    margin-right: auto; /* Center horizontally */
+}
+
+/* Text within sections */
+.upload-section p {
+    font-size: 1.1em;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.caption-text {
+    font-size: 1.3em;
+    color: #333;
+    background-color: #e6f7ff;
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid #b3e0ff;
+    line-height: 1.6;
+    margin-top: 20px;
+    /* text-align: center; will be inherited from .result-section */
+}

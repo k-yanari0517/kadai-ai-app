@@ -1,0 +1,23 @@
+{% extends "base.html" %} {# auth/ を取る #}
+{% block title %}アップロード画像一覧{% endblock %}
+
+{% block content %}
+<h1>アップロード済み画像とキャプション一覧</h1>
+
+<p><a href="{{ url_for('index') }}">トップページに戻る</a></p>
+
+{% if images %}
+        <div class="image-grid">
+        {% for img in images %}
+            <div class="image-item">
+                <img src="{{ img.url }}" alt="Uploaded Image">
+                {% if img.captions %}
+                    <p class="image-caption">{{ img.captions[0].text }}</p>
+                {% endif %}
+            </div>
+        {% endfor %}
+    </div>
+{% else %}
+    <p>まだ画像がアップロードされていません。</p>
+{% endif %}
+{% endblock %}

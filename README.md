@@ -35,7 +35,7 @@
 
 １．リポジトリのクローン
 
-git clone <あなたのリポジトリURL>
+git clone https://github.com/k-yanari0517/kadai-ai-app.git
 
 cd kadai
 

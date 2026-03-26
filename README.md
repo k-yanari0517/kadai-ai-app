@@ -37,7 +37,7 @@
 
 git clone https://github.com/k-yanari0517/kadai-ai-app.git
 
-cd kadai
+cd kadai-ai-app
 
 
 
